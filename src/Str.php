@@ -3,9 +3,9 @@
 namespace Chriscreates\Helpers;
 
 use BadMethodCallException;
-use Illuminate\Support\Str as BaseStrSupport;
+use Illuminate\Support\Str as BaseStr;
 
-class Str extends BaseStrSupport
+class Str extends BaseStr
 {
     /**
      * @var array

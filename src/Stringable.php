@@ -2,9 +2,9 @@
 
 namespace Chriscreates\Helpers;
 
-use Illuminate\Support\Stringable as BaseStringableSupport;
+use Illuminate\Support\Stringable as BaseStringable;
 
-class Stringable extends BaseStringableSupport
+class Stringable extends BaseStringable
 {
     /**
      * Convert a string to ant-like case.
