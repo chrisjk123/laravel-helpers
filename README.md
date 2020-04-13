@@ -1,4 +1,4 @@
-# Very short description of the package
+# A helpers extension of Laravel's helper methods
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/chrisjk123/laravel-helpers.svg?style=flat-square)](https://packagist.org/packages/chrisjk123/laravel-helpers)
 [![Build Status](https://img.shields.io/travis/chrisjk123/laravel-helpers/master.svg?style=flat-square)](https://travis-ci.org/chrisjk123/laravel-helpers)
