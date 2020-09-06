@@ -117,4 +117,14 @@ class StringTest extends TestCase
 
         $this->assertTrue(33 === Str::length($helper));
     }
+
+    /** @test */
+    public function can_limit_the_amount_of_words()
+    {
+        $string = "I think you'll find this rather helpful and that it works really well.";
+
+        $helper = Str::limitWords($string, 7, '...');
+
+        $this->assertSame("I think you'll find this rather helpful...", $helper);
+    }
 }

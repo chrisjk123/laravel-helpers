@@ -120,4 +120,24 @@ class Arr extends BaseArr
 
         return $array;
     }
+
+    /**
+     * Get the next key within the rotation.
+     *
+     * @param  \ArrayAccess|array  $array
+     * @param  mixed  $key
+     * @return array
+     */
+    public static function nextKey(&$array, $key)
+    {
+        $keys = array_keys($array);
+
+        $position = array_search($key, $keys);
+
+        if (isset($keys[$position + 1])) {
+            $next_key = $keys[$position + 1];
+        }
+
+        return $next_key;
+    }
 }

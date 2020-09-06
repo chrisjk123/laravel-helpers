@@ -129,4 +129,21 @@ class ArrTest extends TestCase
             ],
         ], $helper);
     }
+
+    /** @test */
+    public function the_next_key_after_not_knowing_the_key_before()
+    {
+        $array = [
+            0 => 1,
+            5 => 5,
+            8 => 8,
+            13 => 13,
+            20 => 20,
+            55 => 55,
+        ];
+
+        $helper = Arr::nextKey($array, 13);
+
+        $this->assertEquals($helper, 20);
+    }
 }

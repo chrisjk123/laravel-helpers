@@ -130,6 +130,26 @@ class Str extends BaseStr
     }
 
     /**
+     * Limit the amount of words allowed and add any additional characters
+     * after the amount of words.
+     *
+     * @param  string                  $string
+     * @param  int                     $limit
+     * @param  string                  $elipsis
+     * @return string
+     */
+    public static function limitWords(string $string, int $limit, string $elipsis = '') : string
+    {
+        $words = str_word_count($string, 2);
+
+        $limit_of_words = array_slice($words, 0, $limit, true);
+
+        $next_key = Arr::nextKey($words, array_key_last($limit_of_words));
+
+        return static::limit($string, $next_key, $elipsis);
+    }
+
+    /**
      * Get a new stringable object from the given string.
      *
      * @param  string  $string
