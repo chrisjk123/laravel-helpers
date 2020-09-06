@@ -15,3 +15,5 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 - Added Arr get next key helper
 - Added Str limit words not limit characters helper
+- Updated post-script for PHPUnit tests
+- Updated README.md
