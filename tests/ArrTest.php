@@ -146,4 +146,34 @@ class ArrTest extends TestCase
 
         $this->assertEquals($helper, 20);
     }
+
+    /** @test */
+    public function an_array_can_be_mapped_and_muliplied_against_the_another_array()
+    {
+        $array = [
+            [1, 2, 3],
+            [1, 2, 3],
+            [1, 2, 3],
+        ];
+
+        $multiplyAgainst = [
+            [4, 5, 6],
+            [4, 5, 6],
+            [4, 5, 6],
+        ];
+
+        $helper = Arr::arrayMapMultiply($array, $multiplyAgainst);
+
+        $this->assertCount(9, $helper);
+
+        $this->assertSame(reset($helper), [
+            1, 2, 3,
+            4, 5, 6,
+        ]);
+
+        $this->assertSame(end($helper), [
+            1, 2, 3,
+            4, 5, 6,
+        ]);
+    }
 }

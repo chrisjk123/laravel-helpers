@@ -17,3 +17,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 - Added Str limit words not limit characters helper
 - Updated post-script for PHPUnit tests
 - Updated README.md
+
+## 0.0.5 - 21-11-2020
+
+- Added Arr mulitply helper

@@ -87,18 +87,6 @@ class Arr extends BaseArr
     }
 
     /**
-     * Map the given array using a callback.
-     *
-     * @param  \ArrayAccess|array  $array
-     * @param  callable  $callback
-     * @return array
-     */
-    public static function map(&$array, callable $callback) : array
-    {
-        return array_map($callback, $array);
-    }
-
-    /**
      * Replace the given key name with a new key using the "dot" notation.
      *
      * @param  \ArrayAccess|array  $array
@@ -139,5 +127,46 @@ class Arr extends BaseArr
         }
 
         return $next_key;
+    }
+
+    /**
+     * Map the given array mulitply combine against the other array.
+     *
+     * @param  \ArrayAccess|array  $array
+     * @param  array  $arrayToMultiply
+     * @param  array  $arrayToMerge
+     * @return array
+     */
+    public static function arrayMapMultiply(array $arrayToMultiply, array $arrayToMerge) : array
+    {
+        $return = [];
+
+        foreach ($arrayToMultiply as $multiplyItem) {
+            foreach ($arrayToMerge as $mergeItem) {
+                $return[] = array_merge(
+                    static::wrap($multiplyItem),
+                    static::wrap($mergeItem)
+                );
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * Map the given array using a callback.
+     *
+     * @param  \ArrayAccess|array  $array
+     * @param  callable  $callback
+     * @param  bool  $useKeys
+     * @return array
+     */
+    public static function map(&$array, callable $callback, bool $useKeys = false) : array
+    {
+        if ($useKeys) {
+            return array_map($callback, array_keys($array), $array);
+        }
+
+        return array_map($callback, $array);
     }
 }
