@@ -16,7 +16,7 @@ composer require chrisjk123/laravel-helpers
 
 ## Usage
 
-To review all the methods please review the docs at [docs.chriscreate.co.uk](https://docs.chriscreate.co.uk/laravel-helpers/introduction).
+To review all the methods please review the unit tests.
 
 ### Testing
 
