@@ -152,21 +152,4 @@ class Arr extends BaseArr
 
         return $return;
     }
-
-    /**
-     * Map the given array using a callback.
-     *
-     * @param  \ArrayAccess|array  $array
-     * @param  callable  $callback
-     * @param  bool  $useKeys
-     * @return array
-     */
-    public static function map(&$array, callable $callback, bool $useKeys = false) : array
-    {
-        if ($useKeys) {
-            return array_map($callback, array_keys($array), $array);
-        }
-
-        return array_map($callback, $array);
-    }
 }

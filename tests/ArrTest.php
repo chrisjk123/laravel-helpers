@@ -81,24 +81,6 @@ class ArrTest extends TestCase
     }
 
     /** @test */
-    public function is_array_mappable()
-    {
-        $helper = Arr::map($this->array, function ($item) {
-            if (isset($item['test'])) {
-                return $item;
-            }
-
-            return [];
-        });
-
-        $this->assertArrayHasKey('product2', $helper);
-
-        $this->assertEmpty($helper['product1']);
-
-        $this->assertNotSame($this->array, $helper);
-    }
-
-    /** @test */
     public function is_array_key_replacable()
     {
         $helper = Arr::replaceKey($this->array, 'product1.price.first', 'product1.price.second');
